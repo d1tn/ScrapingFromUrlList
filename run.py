@@ -5,7 +5,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
 # URLが記載されたファイルのパス
-input_file_path = 'urls.txt'
+input_file_path = 'URLList.txt'
 
 # 現在の日付と時刻を取得
 now = datetime.now()
