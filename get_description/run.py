@@ -27,7 +27,6 @@ for url in urls:
         html = urlopen(url)
         soup = BeautifulSoup(html, 'html.parser')
         titles.append(soup.title.string)
-        descriptions.append(soup.title.string)
         descriptions.append(soup.find('meta', attrs={'name':'description'})['content'] if soup.find('meta', attrs={'name':'description'}) else 'N/A')
 
     except Exception as e:
@@ -37,8 +36,8 @@ for url in urls:
 
 # 結果をCSVファイルに書き出し
 writer = csv.writer(output_file)
-for url, title in zip(urls, titles):
-    writer.writerow([url, title])
+for url, title, descriptions in zip(urls, titles, descriptions):
+    writer.writerow([url, title, descriptions])
 
 # ファイルのクローズ
 output_file.close()
