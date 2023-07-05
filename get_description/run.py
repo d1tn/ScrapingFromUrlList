@@ -12,7 +12,7 @@ now = datetime.now()
 now_str = now.strftime('%Y%m%d-%H%M')
 
 # 結果を書き出すCSVファイルのパス。BOM付きUTF-8で書き出すためにcodecsを使う。
-output_file_path = f'titlelist_{now_str}.csv'
+output_file_path = f'list_{now_str}.csv'
 output_file = codecs.open(output_file_path, 'w', 'utf-8-sig')
 
 # URLのリストの読み込み
